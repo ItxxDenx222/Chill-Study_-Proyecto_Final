@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chill&Study | Coffee & Workspace</title>
+  <link rel="stylesheet" href="/enlaces_html/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Iconos de FontAwesome para botones y carrito -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO CON CARRITO -->
+  <header class="main-header">
+    <div class="header-container">
+      <h1 class="logo">Chill<span>&</span>Study</h1>
+      <nav class="nav-links">
+        <a href="#" class="active">Inicio</a>
+        <a href="#carta">Carta</a>
+        <a href="#novedades">Novedades</a>
+      </nav>
+      <!-- Indicador de Carrito Interactivo -->
+      <div class="cart-icon" id="cart-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">✨ Especial de la semana</span>
+      <h2>Saluda a la infinidad de opciones y al café gratis.</h2>
+      <p>¡Descubre los sabores más trend para acompañar tus sesiones de estudio!</p>
+    </div>
+  </section>
+
+  <!-- MAIN CATALOGO -->
+  <main class="main-container" id="carta">
+    <h2 class="section-title">Nuestra Selección</h2>
+
+    <!-- BARRA DE BÚSQUEDA Y FILTROS INTERACTIVOS -->
+    <div class="controls-container">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" placeholder="Buscar tu café favorito...">
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">Todos</button>
+        <button class="filter-btn" data-category="caliente">Calientes</button>
+        <button class="filter-btn" data-category="frio">Fríos</button>
+        <button class="filter-btn" data-category="postre">Postres</button>
+      </div>
+    </div>
+    
+    <!-- GRID DE PRODUCTOS -->
+    <section class="contenedor" id="grid-productos">
+
+      <div class="card" data-category="postre" data-title="affogato">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Top Pick</span>
+          <img src="/img/affogato.jpg" alt="Affogato">
+          <button class="fav-btn" title="Guardar en favoritos"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Affogato</h2>
+          <p class="description">Delicioso postre italiano preparado con una bola de helado de vainilla bañada con un espresso caliente.</p>
+          <div class="rating">⭐ 4.9 <span>(120 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$20.000</span>
+            <button class="btn-more" onclick="openModal('Affogato', 'img/affogato.jpg', '$20.000', 'Delicioso postre italiano preparado con una bola de helado de vainilla bañada con un espresso caliente, ofreciendo una combinación perfecta entre lo frío, lo cremoso y el intenso sabor del café.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="flat-white">
+        <div class="card-img-wrapper">
+          <img src="/img/Flat-White.jpg" alt="Flat White">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Flat-White</h2>
+          <p class="description">Doble espresso y leche vaporizada con una fina capa de microespuma, logrando un equilibrio perfecto.</p>
+          <div class="rating">⭐ 4.8 <span>(95 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$15.000</span>
+            <button class="btn-more" onclick="openModal('Flat-White', 'img/Flat-White.jpg', '$15.000', 'Bebida elaborada con un doble espresso y leche vaporizada con una fina capa de microespuma, logrando una textura cremosa.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="macchiato">
+        <div class="card-img-wrapper">
+          <img src="/img/machiatto.webp" alt="Macchiato">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Macchiato</h2>
+          <p class="description">Espresso "manchado" con una pequeña cantidad de leche vaporizada y una fina capa de espuma.</p>
+          <div class="rating">⭐ 4.7 <span>(80 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$13.000</span>
+            <button class="btn-more" onclick="openModal('Macchiato', 'img/machiatto.webp', '$13.000', 'Bebida elaborada con un espresso manchado con una pequeña cantidad de leche vaporizada y una fina capa de espuma.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="latte-dulce">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Dulce</span>
+          <img src="/img/latte-dulce.jpg" alt="Latte Dulce">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Latte-Dulce</h2>
+          <p class="description">Espresso, leche vaporizada y un toque de jarabe dulce. Textura cremosa con un toque delicado.</p>
+          <div class="rating">⭐ 5.0 <span>(210 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$25.000</span>
+            <button class="btn-more" onclick="openModal('Latte-Dulce', 'img/latte-dulce.jpg', '$25.000', 'Bebida elaborada con un espresso, leche vaporizada y un toque de jarabe dulce, coronada con una fina capa de espuma.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="frio" data-title="latte-frio">
+        <div class="card-img-wrapper">
+          <span class="card-badge cold">Frío</span>
+          <img src="/img/latte-frio.webp" alt="Latte Frío">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Latte-Frío</h2>
+          <p class="description">Combinación refrescante con espresso, leche fría y hielo. Opción de añadir jarabes saborizados.</p>
+          <div class="rating">⭐ 4.9 <span>(150 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$25.000</span>
+            <button class="btn-more" onclick="openModal('Latte-Frío', 'img/latte-frio.webp', '$25.000', 'Bebida preparada con un espresso, leche fría y hielo, ofreciendo una combinación refrescante, cremosa y de sabor equilibrado.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="mocha">
+        <div class="card-img-wrapper">
+          <img src="/img/mocha.jpg" alt="Mocha">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Mocha</h2>
+          <p class="description">Espresso, leche vaporizada y chocolate. Combinación perfecta entre café e intenso chocolate.</p>
+          <div class="rating">⭐ 4.8 <span>(110 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$30.000</span>
+            <button class="btn-more" onclick="openModal('Mocha', 'img/mocha.jpg', '$30.000', 'Bebida elaborada con un espresso, leche vaporizada y chocolate, logrando una combinación perfecta.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="frio" data-title="mocha-frio">
+        <div class="card-img-wrapper">
+          <span class="card-badge cold">Frío</span>
+          <img src="/img/mocha-frio.jpg" alt="Mocha Frío">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Mocha-Frío</h2>
+          <p class="description">Espresso, leche fría, hielo y chocolate. La versión más refrescante para amantes del dulce.</p>
+          <div class="rating">⭐ 4.9 <span>(180 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$18.000</span>
+            <button class="btn-more" onclick="openModal('Mocha-Frío', 'img/mocha-frio.jpg', '$18.000', 'Bebida preparada con un espresso, leche fría, hielo y chocolate en una versión fría y suave.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="americano">
+        <div class="card-img-wrapper">
+          <img src="/img/americano.jpg" alt="Americano">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Americano</h2>
+          <p class="description">Espresso diluido en agua caliente. Sabor suave y equilibrado sin perder el aroma del grano.</p>
+          <div class="rating">⭐ 4.6 <span>(60 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$10.000</span>
+            <button class="btn-more" onclick="openModal('Americano', 'img/americano.jpg', '$10.000', 'Bebida elaborada con un espresso y agua caliente, ofreciendo un sabor suave, equilibrado y un aroma intenso.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="espresso">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Clásico</span>
+          <img src="/img/expresso.jpg" alt="Espresso">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Espresso</h2>
+          <p class="description">Extracción a alta presión. Sabor intenso, aroma concentrado y delicada capa de crema natural.</p>
+          <div class="rating">⭐ 4.9 <span>(300 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$13.000</span>
+            <button class="btn-more" onclick="openModal('Espresso', 'img/expresso.jpg', '$13.000', 'Bebida elaborada con café finamente molido y agua caliente extraída a alta presión, ofreciendo un sabor intenso.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="capuchino">
+        <div class="card-img-wrapper">
+          <img src="/img/capuchino.jpg" alt="Capuchino">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Capuchino</h2>
+          <p class="description">Espresso, leche vaporizada y generosa espuma de leche. Opción de toque con canela o cacao.</p>
+          <div class="rating">⭐ 4.8 <span>(140 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$20.000</span>
+            <button class="btn-more" onclick="openModal('Capuchino', 'img/capuchino.jpg', '$20.000', 'Bebida elaborada con un espresso, leche vaporizada y una generosa capa de espuma de leche.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-category="caliente" data-title="cortado">
+        <div class="card-img-wrapper">
+          <img src="/img/cortado.jpg" alt="Cortado">
+          <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="card-content">
+          <h2>Cortado</h2>
+          <p class="description">Espresso cortado con una pequeña cantidad de leche vaporizada para suavizar la acidez.</p>
+          <div class="rating">⭐ 4.7 <span>(75 reseñas)</span></div>
+          <div class="card-footer">
+            <span class="price">$15.600</span>
+            <button class="btn-more" onclick="openModal('Cortado', 'img/cortado.jpg', '$15.600', 'Bebida elaborada con un espresso y una pequeña cantidad de leche vaporizada, logrando un equilibrio perfecto.')">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- MODAL VENTANA EMERGENTE -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-box">
+      <button class="close-modal" id="close-modal">&times;</button>
+      <div class="modal-body">
+        <img id="modal-img" src="" alt="Producto">
+        <div class="modal-info">
+          <h2 id="modal-title"></h2>
+          <span class="modal-price" id="modal-price"></span>
+          <p id="modal-desc"></p>
+          <button class="btn-add-cart" id="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i> Añadir a la orden</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
